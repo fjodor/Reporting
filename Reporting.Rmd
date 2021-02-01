@@ -293,6 +293,22 @@ knitr::include_graphics("libs/_Images/knit-to.png")
 ]
 
 ---
+
+## YAML Header
+
+* Enthält Meta-Informationen, z. B. Titel, Autor, Datum, Ausgabeformat
+* YAML Ain‘t Markup Language <- Yet Another Markup Language
+** Gekennzeichnet mit jeweils drei	---	am Anfang des Dokuments
+* Grundgerüst kann aus RStudio-Vorlage übernommen und angepasst werden
+
+**Knit:** Dokument aus .Rmd-Vorlage erstellen
+
+```{r yaml, echo = FALSE, out.width = "70%", out.height = "70%"}
+knitr::include_graphics("libs/_Images/yaml-header.png")
+```
+
+
+---
 layout: false
 class: hide-footer
 
