@@ -263,6 +263,35 @@ layout: true
 knitr::include_graphics("libs/_Images/markdown-logo.png")
 ```
 ]
+
+---
+
+## Vorlagen unter File - New File - R Markdown
+
+.pull-left[
+
+```{r markdown-vorlage, echo = FALSE, out.width = "85%", out.height = "85%"}
+knitr::include_graphics("libs/_Images/Markdown-Vorlage.png")
+```
+
+]
+
+.pull-right[
+
+Jederzeit zwischen HTML, PDF, Word wechseln: im YAML-Header
+
+* output: html_document
+* output: word_document
+* output: pdf_document
+
+Oder:
+
+```{r knit-to, echo = FALSE, out.width = "40%", out.height = "40%"}
+knitr::include_graphics("libs/_Images/knit-to.png")
+```
+
+]
+
 ---
 layout: false
 class: hide-footer
