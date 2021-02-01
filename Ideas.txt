@@ -1,0 +1,9 @@
+Install xaringanExtra!
+https://pkg.garrickadenbuie.com/xaringanExtra/
+
+Use Tile View
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+

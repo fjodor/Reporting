@@ -1,0 +1,157 @@
+---
+title: "Ergebnisse berichten mit R"
+subtitle: "<br/>Reproduzierbare Workflows dank Markdown"
+author: "Wolf Riepl"
+institute: "IT-Schulungen.com"
+date: "Stand: `r Sys.time()`"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: libs/_css/insert-footer.html
+    lib_dir: libs
+    css: ["libs/_css/my_css.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+      ratio: 16:9
+---
+
+class: hide-footer
+
+background-image: url(libs/_Images/IT-Schulungen_title-slide.png)
+background-position: center
+background-size: contain
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+  
+IT-Schulungen.com  
+Thurn-und-Taxis-Str. 10  
+90411 Nürnberg  
+Tel. 0911 - 650083 - 0  
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### 4. Grafiken, Tabellen, Daten darstellen
+### 5. Flexibilität mit parametrisierten Berichten
+### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 7. Ergänzungen
+
+---
+
+![](libs/_Images/IT-Schulungen_portfolio.png)
+
+---
+
+background-image: url(libs/_Images/IT-Schulungen_zert-partner.png)
+background-position: center
+background-size: contain
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## Projekte in RStudio
+
+.pull-left[
+
+Jenny Bryan:
+
+> Wenn die erste Zeile Ihres R-Skripts lautet
+
+`setwd(“C:/Users/jenny/path/that/only/I/have“)`
+
+> ... dann komme ich in Ihr Büro und ZÜNDE IHREN COMPUTER AN🔥.
+
+
+> Wenn die erste Zeile Ihres R-Skripts lautet
+
+`rm(list = ls())` 
+
+> ... dann komme ich in Ihr Büro und ZÜNDE IHREN COMPUTER AN🔥.
+
+]
+
+.pull-right[
+
+```{r jenny-bryan, echo = FALSE, out.width = "173px", out.height = "173px"}
+knitr::include_graphics("libs/_Images/Jenny-Bryan.jpg")
+```
+
+  Jenny Bryan  
+  RStudio, R Foundation, rOpenSci
+]
+
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## Warum Projekte in RStudio?
+
+### Grundidee: Den *Arbeitsprozess ("Workflow")* vom *Produkt* trennen
+
+.pull-left[
+.content-box-gray[
+**Workflow:**
+* Editor, mit dem man R-Code schreibt
+* Arbeitsverzeichnis
+* Code, den man zuvor ausgeführt hat
+ ]
+]
+
+.pull-right[
+.content-box-grey[
+**Produkt:**
+* Rohdaten
+* R-Code, den andere ausführen müssen, um die gleichen Ergebnisse zu erhalten  
+ 🠊das beinhaltet Aufrufe von *library()*
+ ]
+]
+
+https://www.tidyverse.org/blog/2017/12/workflow-vs-script/
+
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## RStudio: Projekt anlegen
+
+.pull-left[
+
+```{r create-project, echo = FALSE, out.width = "300px", out.height = "306px"}
+knitr::include_graphics("libs/_Images/RStudio_create-project.png")
+```
+
+]
+
+.pull-right[
+Projektspezifische Arbeitsumgebung:
+
+* Skripte
+* Daten
+* Befehlsgeschichte (*History*)
+
+]
+
+---
+
+class: hide-footer
+
+background-image: url(libs/_Images/IT-Schulungen_last-slide.png)
+background-position: center
+background-size: contain
+
+# .white[Viel Erfolg<br> mit R!]
