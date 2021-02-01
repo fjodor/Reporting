@@ -40,7 +40,7 @@ class: inverse, agenda
 
 # Agenda
 
-### 1. Motivation: Warum und wofür Markdown?
+### *1. Motivation: Warum und wofür Markdown?*
 ### 2. Einführung in das Markdown-Format
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
@@ -146,8 +146,125 @@ Projektspezifische Arbeitsumgebung:
 
 ]
 
+
 ---
 
+# Motivation: Reproduzierbarkeit
+
+## Vorteile von RStudio-Projekten
+
+.pull-left[
+
+* Mit **relativen Dateipfaden** arbeiten  
+*Kleine Projekte:* einfach mit Projektordner arbeiten,  
+Dateien ohne Pfadangabe ansprechen  
+*Größere Projekte* mit Unterordnern: *here*-Paket verwenden
+
+* Projekte kopieren / verschieben  
+(anderer Ordner / Rechner, Kollege):  
+funktioniert sofort, ohne Anpassung von Pfaden
+
+* Suche in allen Projekt-Dateien: **Strg + Shift + F  
+"Find in Files"**
+]
+
+.pull-right[
+
+```{r find-in-files, echo = FALSE}
+knitr::include_graphics("libs/_Images/RStudio_find-in-files.png")
+```
+
+]
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## Warum? Es gibt ein Problem ...
+
+```{r Studies-fail-to-replicate, echo = FALSE, out.width = "55%", out.height = "55%", fig.align = "center"}
+knitr::include_graphics("libs/_Images/Studies-fail-to-replicate_ocean.png")
+```
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## Warum? Reproduzierbarkeit von Studien, Datenanalysen
+
+**Schätzungen:**
+
+* 75% - 90% prä-klinischer Studienergebnisse nicht reproduzierbar
+* Kosten für bio-medizinische Firmen in den USA pro Jahr: 28 Mrd. USD
+
+* Quelle:  
+Vortrag von Garrett Grolemund, EARL 2018, 12.9.2018, London  
+Video: https://www.youtube.com/watch?v=HVlwNayog-k  
+Folien: https://earlconf.com/_downloads/london_speakers/EARL2018_-_London_-_Garrett_Grolemund.pdf
+
+* **Reproduzierbare Ergebnisse dank RMarkdown!**
+
+---
+
+# Motivation: Reproduzierbarkeit
+
+## Ausblick: Versionsverwaltung mit git / github
+
+Erfordert git-Installation; https://git-scm.com/downloads;  
+Anleitung siehe https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
+
+```{r git, echo = FALSE, out.width = "50%", out.height = "50%", fig.align = "center"}
+knitr::include_graphics("libs/_Images/git.png")
+```
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### *2. Einführung in das Markdown-Format*
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### 4. Grafiken, Tabellen, Daten darstellen
+### 5. Flexibilität mit parametrisierten Berichten
+### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 7. Ergänzungen
+
+---
+
+# *Präsentation Sparkasse Wien*
+
+*Folien zur Datenbasis: tsort.info, gapminder*
+
+---
+layout: true
+
+# Das Markdown-Format
+
+---
+
+## Automatisierte Berichte in Word, PDF, HTML, Powerpoint
+
+.pull-left[
+
+* Markdown: einfache Auszeichnungssprache („Markup“-Sprache)  
+(Weitere Markup-Sprachen: HTML, XML)  
+* R-Paket **rmarkdown** seit 2014
+* Word-Dokumente erfordern MS Word-Installation
+* PDF-Dokumente erfordern LaTeX-Installation; Empfehlung: **TinyTex** (Alternative: MiKTeX)
+
+* Empfehlung: HTML für interaktive Elemente!
+* Es gibt verschiedene HTML-Formate, inklusive mehreren Präsentations-Varianten
+
+]
+
+.pull-right[
+```{r markdown-logo, echo = FALSE, out.width = "60%", out.height = "50%", fig.align = "right"}
+knitr::include_graphics("libs/_Images/markdown-logo.png")
+```
+]
+---
+layout: false
 class: hide-footer
 
 background-image: url(libs/_Images/IT-Schulungen_last-slide.png)
