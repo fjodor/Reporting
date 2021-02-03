@@ -36,6 +36,16 @@ Thurn-und-Taxis-Str. 10
 Tel. 0911 - 650083 - 0  
 
 ---
+
+![](libs/_Images/IT-Schulungen_portfolio.png)
+
+---
+
+background-image: url(libs/_Images/IT-Schulungen_zert-partner.png)
+background-position: center
+background-size: contain
+
+---
 class: inverse, agenda
 
 # Agenda
@@ -47,16 +57,6 @@ class: inverse, agenda
 ### 5. Flexibilität mit parametrisierten Berichten
 ### 6. Präsentationen, Dashboards, weitere Markdown-Formate
 ### 7. Ergänzungen
-
----
-
-![](libs/_Images/IT-Schulungen_portfolio.png)
-
----
-
-background-image: url(libs/_Images/IT-Schulungen_zert-partner.png)
-background-position: center
-background-size: contain
 
 ---
 
@@ -298,7 +298,7 @@ knitr::include_graphics("libs/_Images/knit-to.png")
 
 * Enthält Meta-Informationen, z. B. Titel, Autor, Datum, Ausgabeformat
 * YAML Ain‘t Markup Language <- Yet Another Markup Language
-** Gekennzeichnet mit jeweils drei	---	am Anfang des Dokuments
+* Gekennzeichnet mit jeweils drei	---	am Anfang des Dokuments
 * Grundgerüst kann aus RStudio-Vorlage übernommen und angepasst werden
 
 **Knit:** Dokument aus .Rmd-Vorlage erstellen
@@ -307,8 +307,82 @@ knitr::include_graphics("libs/_Images/knit-to.png")
 knitr::include_graphics("libs/_Images/yaml-header.png")
 ```
 
+---
+
+## R-Code und Text mischen
+
+```{r R-Text-Code, echo = FALSE, out.width = "100%", out.height = "100%"}
+knitr::include_graphics("libs/_Images/Text_R-Code.png")
+knitr::include_graphics("libs/_Images/Text_R-Code_Output.png")
+```
 
 ---
+
+## R-Code und Text mischen
+
+.pull-left[
+
+Markdown-Code | Ergebnis
+--------------|---------
+*'r R-code'*  |	R-Code in laufenden Text einbetten,<br>z. B. „Die Daten beruhen auf 'r nrow(albums)' Alben.“
+#<br>##| Überschrift 1 <br> Überschrift 2 … usw.
+\*Text*<br>\_Text_          | *Kursivschrift*
+\*\*Text**<br>\_\_Text__    | **Fettschrift**
+
+]
+
+.pull-right[
+Markdown-Code | Ergebnis
+--------------|---------
+\* Punkt 1<br>\* Punkt 2<br> <center> + P 2.1 | Nicht nummerierte Liste
+1. Punkt 1<br>2. Punkt 2 | Nummerierte Liste
+
+Weitere Formatierungen siehe:
+* https://rmarkdown.rstudio.com/authoring_basics.html
+* Markdown Quick Reference in der RStudio-Hilfe
+
+]
+   
+---
+
+## R Codeblock
+
+```{r Codeblock, echo = FALSE, eval = FALSE}
+
+library(tidyverse)
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point() + 
+  theme_dark()
+
+```
+
+![R-Codeblock](libs/_Images/R-Codeblock.png)
+
+* Beginnt mit ```` ```{r} ````
+* endet mit ```` ``` ```` 
+* Wird von R Studio automatisch grau hinterlegt
+* Empfehlung: benennen; hier: *Codeblock*; jeder Name muss eindeutig sein
+* echo = TRUE:	Codeblock im fertigen Dokument anzeigen; Alternative: FALSE
+* eval = FALSE: Code nicht evaluieren (d. h. hier erscheint Code, aber kein Diagramm)
+* Tastaturkürzel: **Strg + Alt + I** fügt Codeblock ein
+
+---
+
+## Chunk-Optionen
+
+Für weitere Chunk-Optionen neben *echo* und *eval* siehe https://yihui.org/knitr/options/
+
+* Einstellungen für Grafiken, z. B. fig.width, fig.height
+* Caching, d. h. Zwischenspeichern von Codeblöcken für schnellere Ausführung
+* Umgang mit Fehlern (anzeigen vs. abbrechen) und Warnungen, Messages (anzeigen vs. unterdrücken)
+* Animationen
+
+---
+
+
+
+---
+
 layout: false
 class: hide-footer
 
