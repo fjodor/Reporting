@@ -379,7 +379,43 @@ Für weitere Chunk-Optionen neben *echo* und *eval* siehe https://yihui.org/knit
 
 ---
 
+## Ablauf: Vom .Rmd-Format zum finalen Bericht
 
+![Ablauf](libs/_Images/Markdown-Ablauf.png)
+
+* Die .Rmd-Datei wird zunächst vom **knitr**-Paket weiterverarbeitet
+* Dieses führt den Code aus und erzeugt ein .md-Dokument (markdown), das Code und Ausgabe enthält
+* Das .md-Dokument wird von **pandoc** weiterverarbeitet, das daraus das finale Ergebnis (Ausgabeformat) erstellt
+
+Quelle: https://rmarkdown.rstudio.com/lesson-2.html
+
+---
+layout: false
+
+# Das Markdown-Format: Literatur
+
+.pull-left[
+```{r Markdown-book, echo = FALSE, fig.show = "hold", out.width = "45%", out.extra = 'style="border:10px solid white;"'}
+knitr::include_graphics("libs/_Images/Markdown_bookcover.png")
+knitr::include_graphics("libs/_Images/R4DS_bookcover.png")
+```
+]
+
+.pull-right[
+Beide Bücher sind online kostenlos lesbar
+
+* https://bookdown.org/yihui/rmarkdown/
+* https://r4ds.had.co.nz/index.html  
+	Kap. 27, 29, 30
+
+Hilfe in RStudio
+
+* Help – Markdown Quick Reference
+* Help – Cheatsheets:  
+R Markdown Cheat Sheet  
+R Markdown Reference Guide
+
+]
 
 ---
 
