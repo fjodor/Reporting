@@ -528,6 +528,37 @@ toc-title: "Inhalt"
 
 ---
 
+# Ausgabe-Formate: Präsentationen
+
+## Folien statt Abschnitte
+
+Format.indent[]| Beschreibung
+---------|-------------------
+Ioslides | YAML: output: ioslides_presentation<br>Optional: logo: logo.png<br># oder ## (Überschriften) oder --- (ohne Überschrift) starten neue Folie<br>Tastaturkürzel für Anzeige-Modi, z. B. f für fullscreen / o für overview<br>.green[\+ Sieht auf Anhieb schicker aus als Slidy]<br>.red[\- Styling zu Lasten der Kompatibilität; keine HTML-Widgets]
+Slidy | YAML: output: slidy_presentation<br>Untertitel auf Folien: ## Aufstehen &#124; Was ich gerne als erstes tue<br>Logo, Tastaturkürzel wie oben<br>.green[\+ Einfacher und robuster als Ioslides; unterstützt auch HTML-Widgets]<br>.red[\- Sieht ohne HTML / CSS nicht schick aus]
+
+---
+
+# Ausgabe-Formate: Präsentationen
+
+## Folien statt Abschnitte
+
+.pull-left[
+
+Format .indent[]| Beschreibung
+---------|-------------
+Beamer | YAML: output: beamer_presentation<br>Optionen im YAML-Header: theme / colortheme / fonttheme
+Powerpoint | YAML: output: powerpoint_presentation<br>Vorlage verwendbar analog zu Word-Dokumenten
+Xaringan | YAML: output: xaringan::moon_reader<br>basiert auf JavaScript-Bibliothek *remarkjs*<br>präferiertes Format von **Yihui Xie** (u. a. Autor von knitr und rmarkdown)<br>https://yihui.org/en/2017/08/why-xaringan-remark-js/
+
+]
+
+.pull-right[
+![Xaringan-logo](libs/_Images/Xaringan_logo.png)
+]
+
+
+---
 layout: false
 class: hide-footer
 
