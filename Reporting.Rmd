@@ -50,7 +50,7 @@ class: inverse, agenda
 
 # Agenda
 
-### *1. Motivation: Warum und wofür Markdown?*
+### .yellow[*1. Motivation: Warum und wofür Markdown?*]
 ### 2. Einführung in das Markdown-Format
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
@@ -223,7 +223,7 @@ class: inverse, agenda
 # Agenda
 
 ### 1. Motivation: Warum und wofür Markdown?
-### *2. Einführung in das Markdown-Format*
+### .yellow[*2. Einführung in das Markdown-Format*]
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
 ### 5. Flexibilität mit parametrisierten Berichten
@@ -415,6 +415,68 @@ Hilfe in RStudio
 R Markdown Cheat Sheet  
 R Markdown Reference Guide
 
+]
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### .yellow[*3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML*]
+### 4. Grafiken, Tabellen, Daten darstellen
+### 5. Flexibilität mit parametrisierten Berichten
+### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 7. Ergänzungen
+
+---
+
+# Ausgabe-Formate: Word
+
+## Automatisierter, statischer Bericht
+
+.pull-left[
+* YAML-Header:		output: word_document
+* Optional: Word-Vorlage einbinden
+* Optional: Inhaltsverzeichnis – TOC = Table Of Contents
+
+YAML-Header-Optionen:
+]
+.pull-right[
+.content-box-gray[
+**Einrückungen *(indentation*) beachten!**  
+
+Sind im YAML-Header wichtig
+]
+]
+.pull-left[
+.content-box-grey[
+\-\-\-  
+output: word_document  
+\-\-\-
+ ]
+
+.content-box-blue[
+\-\-\-  
+output:  
+.indent[word_document:]  
+.indent[.indent[toc: yes]]  
+\-\-\-  
+ ]
+]
+
+.pull-right[
+.content-box-blue[
+\-\-\-  
+output:  
+.indent[word_document:]  
+.indent[.indent[reference_docx: FirmenCI_Vorlage.docx]]  
+.indent[.indent[toc: yes]]  
+toc-title: "Inhalt"  
+\-\-\-  
+
+]
 ]
 
 ---
