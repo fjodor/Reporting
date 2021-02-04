@@ -433,11 +433,10 @@ class: inverse, agenda
 ---
 
 # Ausgabe-Formate: Word
-
 ## Automatisierter, statischer Bericht
 
 .pull-left[
-* YAML-Header:		output: word_document
+* YAML-Header: .indent[output: word_document]
 * Optional: Word-Vorlage einbinden
 * Optional: Inhaltsverzeichnis – TOC = Table Of Contents
 
@@ -448,7 +447,7 @@ YAML-Header-Optionen:
 **Einrückungen *(indentation*) beachten!**  
 
 Sind im YAML-Header wichtig
-]
+ ]
 ]
 .pull-left[
 .content-box-grey[
@@ -476,7 +475,55 @@ output:
 toc-title: "Inhalt"  
 \-\-\-  
 
+ ]
 ]
+
+---
+
+# Ausgabe-Formate: PDF
+## Automatisierter, statischer Bericht
+
+.pull-left[
+* YAML-Header: .indent[output: pdf_document]
+* Optional: Inhaltsverzeichnis – TOC = Table Of Contents
+* Kann nur statische Elemente enthalten
+
+YAML-Header-Optionen:
+]
+.pull-right[
+.content-box-gray[
+**Einrückungen *(indentation*) beachten!**  
+ ]
+
+Latex-Optionen siehe https://bookdown.org/yihui/rmarkdown/pdf-document.html
+]
+
+.pull-left[
+.content-box-grey[
+\-\-\-  
+output: pdf_document  
+\-\-\-
+ ]
+
+.content-box-blue[
+\-\-\-  
+output:  
+.indent[pdf_document:]  
+.indent[.indent[toc: yes]]  
+\-\-\-  
+ ]
+]
+
+.pull-right[
+.content-box-blue[
+\-\-\-  
+output:  
+.indent[pdf_document:]  
+.indent[.indent[toc: yes]]  
+.indent[.indent[latex_engine: xelatex]]  
+toc-title: "Inhalt"  
+\-\-\-  
+ ]
 ]
 
 ---
