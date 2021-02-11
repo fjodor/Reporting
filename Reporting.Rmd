@@ -581,17 +581,110 @@ output: html_document
 output:  
 .indent[html_document:]  
 .indent[.indent[toc: yes]]  
+\-\-\-  
  ]
 ]
 
 .pull-right[
+
 .content-box-gray[
+\-\-\-  
 output:  
 .indent[html_document:]  
 .indent[.indent[toc: yes]]  
 .indent[.indent[toc-float: yes]]  
+\-\-\-  
  ]
 ]
+
+---
+
+# Ausgabe-Formate: HTML
+
+## Bericht mit interaktiven Elementen dank Javascript
+
+* YAML-Header: `output: html_document`
+* Optional: R-Code per Schalter ein- und ausblenden
+* Optional: Markdown-Dokument zum Download anbieten (in den Bericht eingebettet!)
+* Themes (unterschiedliche Stile)
+
+.pull-left[
+.content-box-gray[
+\-\-\-  
+output:  
+.indent[html_document:]  
+.indent[.indent[toc: yes]]  
+.indent[.indent[toc-float: yes]]  
+.indent[.indent[code_folding: hide]]  
+.indent[.indent[code_download: true]]  
+\-\-\-  
+ ]
+]
+
+.pull-right[
+.content-box-blue[
+\-\-\-  
+output:  
+.indent[html_document:]  
+.indent[.indent[theme: default]]  
+\-\-\-  
+ ]
+
+Weitere Themes: united, cerulean, lumen, paper, readable, journal ...
+
+[Datadreaming: Markdown Theme Gallery](https://www.datadreaming.org/post/r markdown theme gallery/)  
+[R Markdown Book: Appearance and Style](https://bookdown.org/yihui/rmarkdown/html document.html#appearance_and_style)
+
+]
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### .yellow[*4. Grafiken, Tabellen, Daten darstellen*]
+### 5. Flexibilität mit parametrisierten Berichten
+### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 7. Ergänzungen
+
+---
+
+# Grafiken
+
+## ggplot2-Diagramme einbinden
+
+* ggplot2-Code einfach in Code-Chunk einfügen
+
+* Optionen im Chunk Header nutzen:
+
+Option | Erläuterung
+-------|------------
+fig.align = 'left'  |  Ausrichtung; Alternativen: 'right' / 'center'
+fig.height = 7, fig.width = 7 | Höhe und Breite in inches
+out.height, out.width | Höhe und Breite, auf die in der finalen Ausgabe skaliert wird<br> Prozent-Angaben, z. B. *out.height = "70%", out.width = "70%"*<br>Pixel-Angaben, z. B. *out.width = "173px", out.height = "173px"*
+
+Weitere Optionen siehe [R Markdown Reference Guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
+In RStudio unter Hilfe - Cheatsheets
+
+---
+
+# Grafiken
+
+## Externe Grafiken einbinden
+
+Im Text, d. h. außerhalb von Code-Chunks:
+
+* Webadresse: `![alt text](http://example.com/logo.png)`
+* Lokaler Dateipfad: `![alt text](figures /img.png)`
+
+In einem Codeblock:
+
+```{r externes-bild, echo = TRUE, eval = FALSE, out.width = "173px", out.height = "173px"}
+knitr::include_graphics("libs/_Images/Cooles-Bild.jpg")
+```
 
 ---
 layout: false
