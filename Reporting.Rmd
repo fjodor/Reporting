@@ -557,6 +557,41 @@ Xaringan | YAML: output: xaringan::moon_reader<br>basiert auf JavaScript-Bibliot
 ![Xaringan-logo](libs/_Images/Xaringan_logo.png)
 ]
 
+---
+
+# Ausgabe-Formate: HTML
+
+## Bericht mit interaktiven Elementen dank Javascript
+
+* YAML-Header: `output: html_document`
+* Optional: Inhaltsverzeichnis - TOC *(**T**able **o**f **C**ontents)*;  
+  optional: "fließendes" Inhaltsverzeichnis, das beim Scrollen angepinnt bleibt *(float)*
+* Unterstützt weitere interaktive Elemente wie Grafiken mit *mouse-over*, interaktive Tabellen
+* Optional: css einbinden, Fußzeile einbinden
+
+.pull-left[
+
+.content-box-grey[
+\-\-\-  
+output: html_document  
+\-\-\-  
+ ]
+
+.content-box-blue[
+output:  
+.indent[html_document:]  
+.indent[.indent[toc: yes]]  
+ ]
+]
+
+.pull-right[
+.content-box-gray[
+output:  
+.indent[html_document:]  
+.indent[.indent[toc: yes]]  
+.indent[.indent[toc-float: yes]]  
+ ]
+]
 
 ---
 layout: false
