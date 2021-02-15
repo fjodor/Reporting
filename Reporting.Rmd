@@ -549,7 +549,7 @@ Format .indent[]| Beschreibung
 ---------|-------------
 Beamer | YAML: output: beamer_presentation<br>Optionen im YAML-Header: theme / colortheme / fonttheme
 Powerpoint | YAML: output: powerpoint_presentation<br>Vorlage verwendbar analog zu Word-Dokumenten
-Xaringan | YAML: output: xaringan::moon_reader<br>basiert auf JavaScript-Bibliothek *remarkjs*<br>präferiertes Format von **Yihui Xie** (u. a. Autor von knitr und rmarkdown)<br>https://yihui.org/en/2017/08/why-xaringan-remark-js/
+Xaringan | YAML: output: xaringan::moon_reader<br>basiert auf JavaScript-Bibliothek *remarkjs*<br>präferiertes Format von **Yihui Xie** (u. a. Autor von knitr und rmarkdown)<br>[Yihui: Why xaringan?](https://yihui.org/en/2017/08/why-xaringan-remark-js/)
 
 ]
 
@@ -685,6 +685,14 @@ In einem Codeblock:
 ```{r externes-bild, echo = TRUE, eval = FALSE, out.width = "173px", out.height = "173px"}
 knitr::include_graphics("libs/_Images/Cooles-Bild.jpg")
 ```
+
+---
+
+# .red[Grafiken]
+
+## Interaktive Grafiken: HTML Widgets
+
+.red[plotly einbinden!]
 
 ---
 
@@ -877,6 +885,20 @@ knitr::include_graphics("libs/_Images/blogdown-cover.png", )
 ```
 
 ]
+
+---
+
+# .red[Dashboards mit R und Markdown]
+
+## Das flexdashboard-Paket
+
+* Baut auf Markdown auf
+* Unterstützt *value boxes* und *gauges* (Kästchen und Armaturen-Displays wie im Auto)
+* Flexible Layouts: Zeilen und Spalten einfach definieren
+* *Storyboards*: Grafiken und zentrale Befunde übersichtlich darstellen
+* Interaktive Elemente: HTML-Widgets, optional Shiny-Apps
+
+.red[Screenshot, nicht von omnitrend, eigenes Beispiel]
 
 ---
 layout: false
