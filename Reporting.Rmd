@@ -55,7 +55,7 @@ class: inverse, agenda
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
 ### 5. Flexibilität mit parametrisierten Berichten
-### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 6. Weitere Markdown-Formate, Dashboards
 ### 7. Ergänzungen
 
 ---
@@ -227,7 +227,7 @@ class: inverse, agenda
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
 ### 5. Flexibilität mit parametrisierten Berichten
-### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 6. Weitere Markdown-Formate, Dashboards
 ### 7. Ergänzungen
 
 ---
@@ -427,7 +427,7 @@ class: inverse, agenda
 ### .yellow[*3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML*]
 ### 4. Grafiken, Tabellen, Daten darstellen
 ### 5. Flexibilität mit parametrisierten Berichten
-### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 6. Weitere Markdown-Formate, Dashboards
 ### 7. Ergänzungen
 
 ---
@@ -647,7 +647,7 @@ class: inverse, agenda
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### .yellow[*4. Grafiken, Tabellen, Daten darstellen*]
 ### 5. Flexibilität mit parametrisierten Berichten
-### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 6. Weitere Markdown-Formate, Dashboards
 ### 7. Ergänzungen
 
 ---
@@ -740,7 +740,7 @@ class: inverse, agenda
 ### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
 ### 4. Grafiken, Tabellen, Daten darstellen
 ### .yellow[*5. Flexibilität mit parametrisierten Berichten*]
-### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 6. Weitere Markdown-Formate, Dashboards
 ### 7. Ergänzungen
 
 ---
@@ -766,6 +766,117 @@ RStudio -> Klick auf **Knit with Parameters**
 rmarkdown::render("Bericht_Jahre.Rmd",
                   params = list(Jahr1 = 1975, Jahr2 = 2000))
 ```
+
+---
+
+# Parametrisierte Berichte
+
+## Beispiele für Parameter
+
+.pull-left[
+.content-box-grey[
+params:  
+.indent[Land1:]  
+.indent[.indent[input: text]]  
+.indent[.indent[label: 'Ländervergleich: Land 1']]  
+.indent[.indent[value: Germany]]  
+ ]
+
+.content-box-blue[
+params:  
+.indent[min_year:]  
+.indent[.indent[label: Von welchem Jahr ab?  ]]  
+.indent[.indent[min: 1952]]  
+.indent[.indent[max: 2007]]  
+.indent[.indent[step: 5]]  
+.indent[.indent[value: 1952]]  
+]
+]
+
+.pull-right[
+.content-box-gray[
+params:  
+.indent[continent:]  
+.indent[.indent[choices:]]  
+.indent[.indent[\- all]]  
+.indent[.indent[\- Africa]]  
+.indent[.indent[\- Americas]]  
+.indent[.indent[\- Asia]]  
+.indent[.indent[\- Europe]]  
+.indent[.indent[\- Oceania]]  
+.indent[.indent[input: select]]  
+.indent[.indent[label: Kontinent?]]  
+.indent[.indent[value: all]]  
+ ]
+]
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### 4. Grafiken, Tabellen, Daten darstellen
+### 5. Flexibilität mit parametrisierten Berichten
+### .yellow[*6. Weitere Markdown-Formate, Dashboards*]
+### 7. Ergänzungen
+
+---
+
+# Weitere Markdown-Formate: Bookdown
+
+## Bücher schreiben direkt aus R
+
+.pull-left[
+* R-Paket von **Yihui Xie** (knitr, animation)
+
+* Grundlage: Markdown
+* Dynamische Bearbeitung
+* Flexible Outputs, z. B. PDF auf Knopfdruck
+* Einfachere Auszeichnungssprache als LaTeX
+* Online-Veröffentlichung, z. B. auf GitHub, bookdown.org, beliebiger Webserver
+* Online-Veröffentlichung ermöglicht interaktive Inhalte:  
+Shiny-Apps, HTML Widgets, Animationen
+
+https://bookdown.org/
+
+]
+
+.pull-right[
+```{r bookdown, echo = FALSE, out.width = "55%", out.height = "55%"}
+knitr::include_graphics("libs/_Images/bookdown-cover.jpg", )
+```
+
+]
+
+---
+
+# Weitere Markdown-Formate: Blogdown
+
+## Websites / Blogs schreiben direkt aus R
+
+.pull-left[
+* R-Paket von **Yihui Xie** (knitr, animation)
+
+* Erzeugt statische Webseite:
+  + HTML, CSS, JavaScript, Bilder, ...
+  + Kein PHP, keine Datenbank, keine serverbasierte R-Installation erforderlich
+
+* Grundlage: Markdown
+  + Dynamische Bearbeitung
+  + Flexible Outputs, z. B. PDF, Buch, etc.
+  
+https://bookdown.org/yihui/blogdown/
+]
+
+.pull-right[
+```{r blogdown, echo = FALSE, out.width = "57%", out.height = "57%"}
+knitr::include_graphics("libs/_Images/blogdown-cover.png", )
+```
+
+]
 
 ---
 layout: false
