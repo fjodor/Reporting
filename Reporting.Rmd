@@ -404,8 +404,8 @@ knitr::include_graphics("libs/_Images/R4DS_bookcover.png")
 .pull-right[
 Beide Bücher sind online kostenlos lesbar
 
-* https://bookdown.org/yihui/rmarkdown/
-* https://r4ds.had.co.nz/index.html  
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+* [R for Data Science](https://r4ds.had.co.nz/index.html)
 	Kap. 27, 29, 30
 
 Hilfe in RStudio
@@ -684,6 +684,87 @@ In einem Codeblock:
 
 ```{r externes-bild, echo = TRUE, eval = FALSE, out.width = "173px", out.height = "173px"}
 knitr::include_graphics("libs/_Images/Cooles-Bild.jpg")
+```
+
+---
+
+# Tabellen, Datensätze
+
+## Paket-Empfehlungen: Daten präsentieren
+
+.pull-left[
+
+Paket / Funktion | Beschreibung
+-----------------|--------------
+knitr::kable() | Standard-Funktion für einfache Tabellen<br>YAML, df_print: default, kable, tibble, paged
+kableExtra | Erweitert *kable()* um Funktionen wie *kable_styling(), row_spec(), column_spec()* <br>Siehe [R Markdown, *The kableExtra package*](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+DT::datatable() | Interaktive Tabellen in HTML-Formaten<br>Daten filter- und sortierbar wie in RStudio<br>Pagination (Aufteilung in navigierbare Seiten); kompakte Darstellung im Dokument
+gt | Enorm flexibel: *grammar of tables* <br>Details siehe [RStudio: gt](https://gt.rstudio.com/)
+]
+
+.pull-right[
+![Parts of a *gt* Table](libs/_Images/gt-table.svg)
+]
+
+---
+
+# Tabellen, Datensätze
+
+## Paket-Empfehlungen: Statistische Modelle
+
+.pull-left[
+
+Paket | Beschreibung
+------|-------------
+gtsummary | publikationsfähige zusammenfassende Statistiken<br>Siehe [Github-Seite Daniel Sjoberg](https://github.com/ddsjoberg/gtsummary)
+xtable | Wandelt R-Objekte in xtable-Objekte um<br>Beispiele siehe Vignette [*List of Tables*](https://cran.r-project.org/web/packages/xtable/vignettes/listOfTablesGallery.pdf)
+htmlreg | Stellt Regressionsmodelle in LaTeX oder HTML dar<br>Kann mehrere Modelle neben einander darstellen
+broom | Wandelt statistische Modelle in data.frames um<br>Diese können mit anderen Paketen flexibel dargestellt werden
+]
+
+.pull-right[
+
+### gtsummary
+
+![gtsummary](libs/_Images/gtsummary.png)
+
+]
+
+---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### 4. Grafiken, Tabellen, Daten darstellen
+### .yellow[*5. Flexibilität mit parametrisierten Berichten*]
+### 6. Präsentationen, Dashboards, weitere Markdown-Formate
+### 7. Ergänzungen
+
+---
+
+# Parametrisierte Berichte
+
+## Unterschiedliche Berichte aus dem gleichen Markdown-Dokument erstellen
+
+.pull-left[
+* Parameter interaktiv angeben:  
+RStudio -> Klick auf **Knit with Parameters**
+
+* Parameter programmatisch angeben:  
+**rmarkdown::render(file, params = list(...))**
+
+]
+
+.pull-right[
+![Knit with Parameters](libs/_Images/knit-with-parameters.png)
+]
+
+```{r parameters, echo = TRUE, eval = FALSE}
+rmarkdown::render("Bericht_Jahre.Rmd",
+                  params = list(Jahr1 = 1975, Jahr2 = 2000))
 ```
 
 ---
