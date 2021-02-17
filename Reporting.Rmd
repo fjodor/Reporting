@@ -232,14 +232,22 @@ class: inverse, agenda
 
 ---
 
-# *Präsentation Sparkasse Wien*
-
-*Folien zur Datenbasis: tsort.info, gapminder*
-
----
 layout: true
 
 # Das Markdown-Format
+
+---
+
+## Daten: Top 100 Songs pro Jahr 2000 - 2020
+
+* Datenquelle: [chart2000.com]( https://chart2000.com/about.htm); Version 0-3-0062
+* Kennzahl: * **Indicative Revenue:** * Gesamt-Punktzahl: Näherung für den Erlös eines Songs
+  + Berücksichtigt Inflation und Währungseffekte
+  + Eine Einheit entspricht 1.000 US-Dollar
+* 2100 Zeilen (100 * 21); 11 Variablen: Jahr, Position, Künstler / Band, Songtitel, Punktzahl,  
+Jahres-Chartposition in den USA, Vereinigtes Königreich, Deutschland, Frankreich, Kanada, Australien
+
+![Top 5 Songs](libs/_Images/songyear_head.png)
 
 ---
 

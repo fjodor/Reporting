@@ -7,3 +7,4 @@ Use Tile View
 xaringanExtra::use_tile_view()
 ```
 
+https://cran.r-project.org/web/packages/sjPlot/vignettes/tab_model_estimates.html
