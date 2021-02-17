@@ -25,7 +25,7 @@ background-position: center
 background-size: contain
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 ```
 
 ???
@@ -240,14 +240,30 @@ layout: true
 
 ## Daten: Top 100 Songs pro Jahr 2000 - 2020
 
-* Datenquelle: [chart2000.com]( https://chart2000.com/about.htm); Version 0-3-0062
 * Kennzahl: * **Indicative Revenue:** * Gesamt-Punktzahl: Näherung für den Erlös eines Songs
   + Berücksichtigt Inflation und Währungseffekte
   + Eine Einheit entspricht 1.000 US-Dollar
 * 2100 Zeilen (100 * 21); 11 Variablen: Jahr, Position, Künstler / Band, Songtitel, Punktzahl,  
 Jahres-Chartposition in den USA, Vereinigtes Königreich, Deutschland, Frankreich, Kanada, Australien
+* Datenquelle: [chart2000.com]( https://chart2000.com/about.htm); Version 0-3-0062
 
 ![Top 5 Songs](libs/_Images/songyear_head.png)
+
+---
+
+.pull-left[
+## Daten: Gapminder
+
+* Gapminder-Projekt von **Hans Rosling**
+* Seine Videos auf Youtube sind sehenswert!
+* Wohlstand (als *BIP pro Kopf*) und Lebenserwartung im Zeitverlauf
+* Datenquelle: R-Paket *gapminder* von **Jenny Bryan**
+* Animation erstellt mit *gganimate* von **Thomas L. Pedersen** (ursprünglich von David Robinson)
+]
+
+.pull-right[
+![Gapminder-Animation mit R, gganimate](libs/_Images/gapminder.gif)
+]
 
 ---
 
@@ -699,6 +715,29 @@ knitr::include_graphics("libs/_Images/Cooles-Bild.jpg")
 # .red[Grafiken]
 
 ## Interaktive Grafiken: HTML Widgets
+
+```{r gapminder_plotly, echo = FALSE, message = FALSE, warning = FALSE}
+
+library(tidyverse)
+library(gapminder)
+library(plotly)
+
+p <- gapminder %>% 
+  filter(year == 2007) %>% 
+  ggplot(aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  theme(legend.position = 'none') +
+  labs(title = 'Year: 2007', x = 'GDP per capita', y = 'life expectancy')
+
+# ggplotly(p)
+plotly:::plotly_iframe(p)
+
+```
+
 
 .red[plotly einbinden!]
 

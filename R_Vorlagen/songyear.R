@@ -11,3 +11,12 @@ songyear %>%
   arrange(desc(indicativerevenue)) %>% 
   head(n = 5) %>% 
   View()
+
+top3 <- songyear %>% 
+  group_by(artist) %>% 
+  summarise(total = sum(indicativerevenue)) %>% 
+  slice_max(n = 3, order_by = total) %>% 
+  pull(artist)
+
+top3 <- songyear %>% 
+  filter(artist %in% top3)
