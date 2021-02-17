@@ -901,6 +901,47 @@ knitr::include_graphics("libs/_Images/blogdown-cover.png", )
 .red[Screenshot, nicht von omnitrend, eigenes Beispiel]
 
 ---
+class: inverse, agenda
+
+# Agenda
+
+### 1. Motivation: Warum und wofür Markdown?
+### 2. Einführung in das Markdown-Format
+### 3. Ausgabe-Formate: Word, PDF, Powerpoint, HTML
+### 4. Grafiken, Tabellen, Daten darstellen
+### 5. Flexibilität mit parametrisierten Berichten
+### 6. Weitere Markdown-Formate, Dashboards
+### .yellow[*7. Ergänzungen*]
+
+---
+
+# Ergänzungen
+
+## .red[Paket-Empfehlungen: Schönere HTML-Dokumente]
+
+* .red[distill]
+* prettydoc
+* rmdformats
+
+---
+
+# Ergänzungen
+
+## Paket-Empfehlungen: Schönere PDF-Dokumente
+
+### pagedown
+
+* "A less traveled road to PDF"; Romain Lesur und Yihui Xie  
+* Verwendet HTML, CSS sowie paged.js, um PDF zu erzeugen
+* [pagedown Online-Buch](https://pagedown.rbind.io/)
+
+### pagedreport
+
+* Enthält Vorlagen, die direkt aus RMarkdown angepasst werden können
+* Anwender benötigt keine Kenntnisse in HTML, CSS oder Javascript
+* [pagedreport Blogartikel, mit Video](https://rfortherestofus.com/2021/01/announcing-pagedreport/)  
+
+---
 layout: false
 class: hide-footer
 
