@@ -6,6 +6,7 @@ institute: "IT-Schulungen.com"
 date: "Stand: `r Sys.time()`"
 output:
   xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
     includes:
       after_body: libs/_css/insert-footer.html
     lib_dir: libs
@@ -25,7 +26,8 @@ background-position: center
 background-size: contain
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE) # seit rmarkdown 2.6
+# options(htmltools.dir.version = FALSE)
 ```
 
 ???
@@ -707,23 +709,27 @@ Im Text, d. h. außerhalb von Code-Chunks:
 In einem Codeblock:
 
 ```{r externes-bild, echo = TRUE, eval = FALSE, out.width = "173px", out.height = "173px"}
-knitr::include_graphics("libs/_Images/Cooles-Bild.jpg")
+knitr::include_graphics("Grafiken/Coole-Grafik1.png")
 ```
 
----
+* Praktisch für Größenanpassungen mit out.width, out.height
 
-# .red[Grafiken]
+---
+class: hide-footer
+
+# Grafiken
 
 ## Interaktive Grafiken: HTML Widgets
 
-```{r gapminder_plotly, echo = FALSE, message = FALSE, warning = FALSE}
+```{r gapminder_plotly, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", out.height = "450"}
 
 library(tidyverse)
 library(gapminder)
 library(plotly)
+library(widgetframe)
 
-p <- gapminder %>% 
-  filter(year == 2007) %>% 
+p <- gapminder %>%
+  filter(year == 2007) %>%
   ggplot(aes(gdpPercap, lifeExp, size = pop, colour = country)) +
   geom_point(alpha = 0.7) +
   scale_colour_manual(values = country_colors) +
@@ -733,13 +739,9 @@ p <- gapminder %>%
   theme(legend.position = 'none') +
   labs(title = 'Year: 2007', x = 'GDP per capita', y = 'life expectancy')
 
-# ggplotly(p)
-plotly:::plotly_iframe(p)
+ggplotly(p)
 
 ```
-
-
-.red[plotly einbinden!]
 
 ---
 
@@ -760,6 +762,23 @@ gt | Enorm flexibel: *grammar of tables* <br>Details siehe [RStudio: gt](https:/
 .pull-right[
 ![Parts of a *gt* Table](libs/_Images/gt-table.svg)
 ]
+
+---
+class: hide-footer
+
+# Tabellen, Datensätze
+
+## Interaktive Tabelle mit DT::datatable()
+
+```{r DT, echo = FALSE}
+
+library(gapminder)
+DT::datatable(
+      gapminder,
+      fillContainer = FALSE, options = list(pageLength = 8)
+)
+
+```
 
 ---
 
