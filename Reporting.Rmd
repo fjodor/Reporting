@@ -1027,6 +1027,15 @@ class: inverse, agenda
 * **Shiny Widgets** zur interaktiven grafischen Bearbeitung, z. B. um Ausreißer zu filtern oder zu beschriften  
 Beispiel: **esquisse:** ggplot-Diagramme per grafischer Oberfläche erstellen
 
+---
+
+# .red[To do]
+
+* distill testen
+* Bibliografie (nur PDF? distill? paper...? Link?)
+* Querverweise
+* Abbildungs-Beschriftungen
+* ggstatsplot
 
 ---
 layout: false
