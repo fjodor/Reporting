@@ -27,7 +27,7 @@ skimr::skim(gapminder)
 
 # ggplot-Diagramme
 
-# Entwicklung der Lebenserwartung im Zeitverlauf: Beispiel Deutschland
+#### Entwicklung der Lebenserwartung im Zeitverlauf: Beispiel Deutschland ####
 
 gapminder %>% 
   filter(country == "Germany") %>% 
@@ -46,7 +46,7 @@ gapminder %>%
        caption = "Source: Gapminder project /\n gapminder R package by Jenny Bryan") +
   scale_color_discrete(name = "")
 
-# Deutschland und Türkei hervorgehoben
+#### Deutschland und Türkei hervorgehoben ####
 
 gapminder %>% 
   filter(continent == "Europe") %>% 
@@ -60,7 +60,7 @@ gapminder %>%
        gapminder R package by Jenny Bryan") +
   scale_color_discrete(name = "")
 
-# Land mit höchster und niedrigster Lebenserwartung hervorgehoben
+#### Land mit höchster und niedrigster Lebenserwartung hervorgehoben ####
 
 highlow <- gapminder %>% 
   filter(continent == "Europe") %>% 
@@ -80,7 +80,7 @@ gapminder %>%
   scale_color_discrete(name = "") +
   theme(legend.position = c(0.9, 0.15))
 
-# Mehr Infos: Facets
+#### Mehr Infos: Facets ####
 
 highlow <- gapminder %>% 
   group_by(continent) %>% 
@@ -100,9 +100,7 @@ gapminder %>%
        caption = "Source: Gapminder project /\n gapminder R package by Jenny Bryan") +
   scale_color_discrete(guide = NULL)
 
-# Mouse-Over
-
-library(plotly)
+#### Interaktives Diagramm mit Mouse-Over: plotly ####
 
 p <- gapminder %>% 
   ggplot(aes(x = year, y = lifeExp, group = country, color = factor(highlight))) +
@@ -116,7 +114,7 @@ p <- gapminder %>%
 
 ggplotly(p, tooltip = c("group", "x", "y"))
 
-#### Interaktives plotly-Diagramm: 2007 ####
+# Interaktives plotly-Diagramm: 2007
 
 p <- gapminder %>% 
   filter(year == 2007) %>% 
