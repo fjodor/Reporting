@@ -739,7 +739,12 @@ p <- gapminder %>%
   theme(legend.position = 'none') +
   labs(title = 'Year: 2007', x = 'GDP per capita', y = 'life expectancy')
 
-ggplotly(p)
+p <- ggplotly(p)
+# p
+
+# Das Widget hilft beim Auto-Skalieren.
+# Ohne Widget verschieben sich die Reaktionspunkte der Mouse-Over-Einblendungen.
+frameWidget(p)
 
 ```
 
