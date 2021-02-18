@@ -1013,6 +1013,22 @@ class: inverse, agenda
 * [pagedreport Blogartikel, mit Video](https://rfortherestofus.com/2021/01/announcing-pagedreport/)  
 
 ---
+
+# Ergänzungen
+
+## Paket-Empfehlungen: Datensätze erschließen
+
+* **skimr:** Schnelle Übersicht über Datensatz mit *skim()*
+
+* **DataExplorer:** automatisiert Markdown-Berichte erstellen mit *create_report()*
+
+* **GGally:** Grafische Übersicht z. B. mit *ggpairs()*
+
+* **Shiny Widgets** zur interaktiven grafischen Bearbeitung, z. B. um Ausreißer zu filtern oder zu beschriften  
+Beispiel: **esquisse:** ggplot-Diagramme per grafischer Oberfläche erstellen
+
+
+---
 layout: false
 class: hide-footer
 
