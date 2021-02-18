@@ -1,0 +1,73 @@
+---
+title: "Querverweise: Grafiken, Tabellen, Gleichungen"
+author: "Ergebnisse berichten mit R"
+output:
+  
+  bookdown::pdf_document2: default
+  bookdown::html_document2: default
+---
+
+# Querverweis auf eine Grafik
+
+## Top 5 Künstler / Bands: "Ausreißer"-Songs
+
+Welche Songs der Top 5 Künstler / Bands können wir aus statistischer Sicht als Ausreißer betrachten? Aufschluss geben Boxplots: \@ref(fig:songs-top5).
+
+```{r setup, include = FALSE}
+
+library(tidyverse)
+library(ggthemes)
+
+knitr::opts_chunk
+
+top5 <- readRDS(here::here("top5.rds"))
+
+theme_set(theme_solarized(base_size = 15))
+
+theme_update(axis.text.x = element_text(angle = 90),
+             axis.ticks.x = element_blank(),
+             panel.grid.major.x = element_blank())
+
+```
+
+
+```{r songs-top5, fig.cap = "Songs der Top 5 Künstler / Bands", echo = FALSE}
+
+is_outlier <- function(x) {
+  return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
+}
+
+top5 %>% 
+  group_by(artist) %>% 
+  mutate(outlier = ifelse(is_outlier(indicativerevenue), song, NA)) %>% 
+  ggplot(aes(x = artist, y = indicativerevenue, color = artist)) +
+  geom_boxplot(varwidth = TRUE) +
+  geom_text(aes(label = outlier), na.rm = TRUE, nudge_y = 1500) +
+  labs(x = "", y = "Indicative Revenue",
+       title = "Indicative Revenue by Artist",
+       subtitle = "Artists sorted by number of songs in Top 100 per year",
+       caption = "Source: Chart2000.com, Songs of the year, Version 0-3-0062") +
+  scale_color_discrete(guide = NULL)
+```
+
+
+# Querverweis auf eine Tabelle
+
+Betrachten wir noch die erfolgreichsten Songs der Top 5 tabellarisch: \@ref(tab:top5-table).
+                                       
+```{r top5-table, echo=FALSE}
+top5 %>% 
+  arrange(desc(indicativerevenue)) %>% 
+  head(n = 5) %>% 
+  knitr::kable(caption = "Top 5 Songs")
+```
+
+
+# Querverweis auf eine Gleichung
+
+Der Mittelwert berechnet sich nach Gleichung \@ref(eq:mean).
+
+\begin{equation}
+\bar{X} = \frac{\sum_{i=1}^n X_i}{n} (\#eq:mean)
+                                       \end{equation}
+                                       
