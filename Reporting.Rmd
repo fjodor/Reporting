@@ -810,6 +810,33 @@ broom | Wandelt statistische Modelle in data.frames um<br>Diese können mit ande
 ]
 
 ---
+
+# Grafiken und Tabellen: Querverweise
+
+## Voraussetzungen
+
+* **bookdown**-Format verwenden: *html_document2, pdf_document2, word_document2*  
+(Querverweise (*cross references) werden von rmarkdown nicht unterstützt)
+
+* **Bildunterschrift** (Tabellenbeschriftung)  
+Sonst wird das Bild direkt eingefügt, ohne Verweis
+
+* Ein **benannter Codeblock**  
+zur Identifikation der Grafik / Tabelle, die mit ihm erstellt wird
+
+* Literatur:  
+Ausführlich: [Bookdown Kap. 2, insbesondere 2.6](https://bookdown.org/yihui/bookdown/components.html)  
+Knapper: [Markdown-Buch Kap. 4.7](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html)
+
+---
+
+# Grafiken und Tabellen: Querverweise
+
+## Beispiel
+
+
+
+---
 class: inverse, agenda
 
 # Agenda
@@ -1016,6 +1043,19 @@ class: inverse, agenda
 
 # Ergänzungen
 
+## Andere Sprachen als R
+
+* In Markdown-Dokumenten können auch Codeblöcke **anderer Programmiersprachen** verwendet werden
+* Beispiele: **Python, SQL**
+* Je nach installierter Software sind z. B. auch **SAS, Stata** möglich
+* Details:
+  + `names(knitr::knit_engines$get())`  
+  + [Markdown-Buch Kap. 15](https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html)
+
+---
+
+# Ergänzungen
+
 ## Paket-Empfehlungen: Datensätze erschließen
 
 * **skimr:** Schnelle Übersicht über Datensatz mit *skim()*
@@ -1035,7 +1075,6 @@ Beispiel: **esquisse:** ggplot-Diagramme per grafischer Oberfläche erstellen
 * Bibliografie (nur PDF? distill? paper...? Link?)
 * Querverweise
 * Abbildungs-Beschriftungen
-* ggstatsplot
 
 ---
 layout: false
