@@ -1015,9 +1015,22 @@ class: inverse, agenda
 
 # Ergänzungen
 
-## .red[Paket-Empfehlungen: Schönere HTML-Dokumente]
+## Paket-Empfehlungen: Schönere HTML-Dokumente
 
-* .red[distill]
+### distill
+
+* Lesefreundliche, für mobile Displays geeignete Schriftarten
+* Unterstützt LaTeX-Formeln, Zitieren, Fußnoten
+* Flexible Layouts für Diagramme, z. B. breiter als Text
+* Publikationsmöglichkeiten, z. B. *Distill-Webseite, Distill Blog*
+* Mehr Infos: [RStudio: Distill](https://rstudio.github.io/distill/)
+
+---
+
+# Ergänzungen
+
+## Weitere Pakete für schönere HTML-Dokumente
+
 * prettydoc
 * rmdformats
 
