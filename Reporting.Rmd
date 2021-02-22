@@ -1033,6 +1033,8 @@ class: inverse, agenda
 
 * prettydoc
 * rmdformats
+* bslib: eigene Bootstrap-Themes direkt in R erstellen;  
+enthält interaktives Widget für Echtzeit-Vorschau
 
 ---
 
