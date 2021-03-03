@@ -116,10 +116,11 @@ Anhänge können ergänzt werden mit der *.appendix*-Klasse, die an Überschrift
 
 # Aussehen verändern: Eigenes Theme
 
-* CSS einbinden im YAML-Header: *theme: theme.css*
+* CSS einbinden im YAML-Header: *theme: theme.css*  
+Beispiel für CSS-Anpassungen: [The Mockup Blog](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/)
 * Eigenes Theme erstellen: *create_theme(name = "theme")*
 * Schnelle Möglichkeit, eigenen Stil einzubringen: Google Fonts
-  + Importieren (@import)
+  + Importieren `@import`
   + In der CSS-Datei angeben
   
 
