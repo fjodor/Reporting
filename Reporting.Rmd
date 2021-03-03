@@ -1058,6 +1058,46 @@ enthält interaktives Widget für Echtzeit-Vorschau
 
 # Ergänzungen
 
+## Querverweise
+
+Querverweise werden nicht von Standard-Markdown unterstützt, aber von **bookdown**.
+
+
+.pull-left[
+Geeignete Formate im Yaml-Header definieren:
+
+.content-box-gray[
+output:  
+.indent[bookdown::pdf_document2: default]  
+.indent[bookdown::html_document2: default]
+ ]
+
+]
+
+.pull-right[
+
+Querverweis auf | Beispiel
+----------------|----------
+Grafik | \@ref(fig:songs-top5)  
+Tabelle |\@ref(tab:top5-table)
+Gleichung | \@ref(eq:mean)
+
+*songs-top5*, *top5-table*: Namen der Code-Chunks
+
+]
+
+---
+
+# Ergänzungen
+
+## Index erstellen
+
+.red[Wird zur Zeit nur unterstützt von: ]
+
+---
+
+# Ergänzungen
+
 ## Andere Sprachen als R
 
 * In Markdown-Dokumenten können auch Codeblöcke **anderer Programmiersprachen** verwendet werden

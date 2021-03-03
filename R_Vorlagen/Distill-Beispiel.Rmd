@@ -1,0 +1,74 @@
+---
+title: "Artikel mit Distill"
+description: |
+  Artikel, geschrieben mit dem Distill-Format.
+author:
+  - name: Karl Mustermann
+    url: https://example.com/musterfirma/mustermann
+    affiliation: Musterfirma Inc. GmbH & Co. KG
+    affiliation_url: https://example.com/musterfirma
+  - name: Zweitautor
+    url: https://example.com/musterfirma/zweitautor
+    orcid-id: 0000-0001-0000-XXXX
+date: "Erstellt: `r Sys.Date()`"
+bibliography: biblio.bib
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill ist ein Veröffentlichungs-Format für wissenschaftliche und technische Fachartikel, insbesondere als Internet-Veröffentlichung.
+
+Mehr über Distill für R Markdown unter <https://rstudio.github.io/distill>.
+
+
+# Diagramm
+
+## Optional breiter als der Text
+
+Das folgende Diagramm wird breiter dargestellt als der laufende Text. Um das zu zeigen, füllen wir die Seite mit weiteren Worten, die als Platzhalter fungieren. So wird die Seitenbreite für Text erkennbar.
+
+Die Grafik muss sich nicht daran halten. Das wird im Chunk Header mit der Option *layout = "l-body-outset"* gekennzeichnet. Empfehlenswert ist, zusätzlich *fig.width* und *fig.height* anzugeben.
+
+```{r, layout="l-body-outset", fig.width = 6, fig.height = 1.5, echo = TRUE}
+
+library(ggplot2)
+ggplot(diamonds, aes(carat, price)) + geom_smooth() +
+  facet_grid(~ cut)
+
+```
+
+
+# Beispiel für eine Tabelle
+
+## Paginierung
+
+Funktion: *paged_table()*
+
+Tabelle wird optional ebenfalls breiter dargestellt als der Text.
+
+```{r, layout = "l-body-outset", echo = TRUE}
+
+library(rmarkdown)
+paged_table(mtcars)
+
+```
+
+
+# Beispiel für Literaturzitate
+
+* Basieren auf Bibtext
+* Benötigen eine bibtex-Datei, die im YAML-Header angegeben wird  
+bibliography: biblio.bib
+
+Verwendung im Text: `[@Mustermann2021]`
+
+Diese Arbeit basiert auf [@Mustermann2021].
+
+
+# Beispiel für eine Fußnote
+
+
+
