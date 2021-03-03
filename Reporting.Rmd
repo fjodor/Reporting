@@ -1092,7 +1092,9 @@ Gleichung | \@ref(eq:mean)
 
 ## Index erstellen
 
-.red[Wird zur Zeit nur unterstützt von: ]
+* Wird zur Zeit nur im PDF-Format unterstützt
+* Erstellung mit dem LaTeX-Paket **makeidx**
+* Siehe [Bookdown-Buch: Index](https://bookdown.org/yihui/bookdown/latex-index.html)
 
 ---
 
