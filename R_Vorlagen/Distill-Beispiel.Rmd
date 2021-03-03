@@ -28,6 +28,8 @@ Distill ist ein Veröffentlichungs-Format für wissenschaftliche und technische 
 
 Mehr über Distill für R Markdown unter <https://rstudio.github.io/distill>.
 
+Erweiterungen in der neuen Distill-Version: <https://blog.rstudio.com/2020/12/07/distill/>
+
 Markdown-Funktionalitäten wie Darstellung des R-Codes, eingebetteter R-Code, Inhaltsverzeichnis etc. stehen zur Verfügung.
 
 Ausgabe-Formate:
