@@ -717,7 +717,7 @@ class: hide-footer
 
 # Grafiken
 
-## Interaktive Grafiken: HTML Widgets
+## Interaktive Grafiken: HTMLWidgets
 
 ```{r gapminder_plotly, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", out.height = "450"}
 
@@ -845,7 +845,7 @@ zur Identifikation der Grafik / Tabelle, die mit ihm erstellt wird
 Querverweise werden nicht von Standard-Markdown unterstützt, aber von **bookdown**.
 
 .pull-left[
-Geeignete Formate im Yaml-Header definieren:
+### Geeignetes Format im Yaml-Header definieren
 
 .content-box-gray[
 output:  
@@ -856,6 +856,8 @@ output:
 ]
 
 .pull-right[
+
+### Beispiele
 
 Querverweis auf | Beispiel
 ----------------|----------
@@ -975,7 +977,7 @@ class: inverse, agenda
 * Einfachere Auszeichnungssprache als LaTeX
 * Online-Veröffentlichung, z. B. auf GitHub, bookdown.org, beliebiger Webserver
 * Online-Veröffentlichung ermöglicht interaktive Inhalte:  
-Shiny-Apps, HTML Widgets, Animationen
+Shiny-Apps, HTML-Widgets, Animationen
 
 https://bookdown.org/
 
