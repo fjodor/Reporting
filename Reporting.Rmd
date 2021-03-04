@@ -1149,6 +1149,70 @@ enthält interaktives Widget für Echtzeit-Vorschau
 
 # Ergänzungen
 
+.pull-left[
+## Shiny
+
+* Oft als alleinstehende App
+
+* Benötigt R während der Laufzeit:
+
+  + Lokale R-Session *oder*
+  + Serverbasierte R-Session (Webseite)
+  
+.red[Beispiel: **7a_Shiny.R**]
+
+Shiny lernen:
+
+  + RStudio-Webseiten: https://shiny.rstudio.com/
+  + Neues Buch von Hadley Wickham: [Mastering Shiny](https://mastering-shiny.org/)
+]
+
+.pull-right[
+```{r, echo = FALSE, out.width = "70%", out.height = "70%"}
+knitr::include_graphics("libs/_Images/mastering-shiny.png")
+```
+]
+
+---
+
+# Ergänzungen
+
+## Markdown und Shiny
+
+Die Markdown-HTML-Formate können **mit Shiny-Elementen oder ohne** erstellt werden.
+
+.red[Beispiel für Dashboard mit Shiny: **7b_Flexdash_shiny.Rmd**]
+
+--
+
+.pull-left[
+  .content-box-gray[
+### Markdown ohne Shiny
+
+* R  nur zur einmaligen Erstellung benötigt
+* Endnutzer benötigt **keinen Zugang zu R**  
+(sei es auf einem Webserver oder einem lokalen Rechner)
+* Dokument erstellen: **Knit**
+  ]
+]
+
+--
+
+.pull-right[
+  .content-box-blue[
+### Markdown mit Shiny
+
+* YAML-Header: *runtime: shiny*
+* Shiny benötigt **aktive R-Session** zur Laufzeit
+* Dashboard starten: ~~**Knit**~~ -> **Run Document** 
+  ]
+]
+
+
+---
+
+# Ergänzungen
+
 ## Paket-Empfehlungen: Datensätze erschließen
 
 * **skimr:** Schnelle Übersicht über Datensatz mit *skim()*
