@@ -182,7 +182,7 @@ knitr::include_graphics("libs/_Images/RStudio_find-in-files.png")
 
 # Motivation: Reproduzierbarkeit
 
-## Warum? Es gibt ein Problem ...
+## Warum Markdown? Es gibt ein Problem ...
 
 ```{r Studies-fail-to-replicate, echo = FALSE, out.width = "55%", out.height = "55%", fig.align = "center"}
 knitr::include_graphics("libs/_Images/Studies-fail-to-replicate_ocean.png")
@@ -192,7 +192,7 @@ knitr::include_graphics("libs/_Images/Studies-fail-to-replicate_ocean.png")
 
 # Motivation: Reproduzierbarkeit
 
-## Warum? Reproduzierbarkeit von Studien, Datenanalysen
+## Reproduzierbarkeit von Studien, Datenanalysen
 
 **Schätzungen:**
 
@@ -274,12 +274,12 @@ Jahres-Chartposition in den USA, Vereinigtes Königreich, Deutschland, Frankreic
 .pull-left[
 
 * Markdown: einfache Auszeichnungssprache („Markup“-Sprache)  
-(Weitere Markup-Sprachen: HTML, XML)  
+Weitere Markup-Sprachen: HTML, XML  
 * R-Paket **rmarkdown** seit 2014
 * Word-Dokumente erfordern MS Word-Installation
 * PDF-Dokumente erfordern LaTeX-Installation; Empfehlung: **TinyTex** (Alternative: MiKTeX)
 
-* Empfehlung: HTML für interaktive Elemente!
+* **Empfehlung: HTML für interaktive Elemente!**
 * Es gibt verschiedene HTML-Formate, inklusive mehreren Präsentations-Varianten
 
 ]
@@ -632,7 +632,7 @@ output:
 * YAML-Header: `output: html_document`
 * Optional: R-Code per Schalter ein- und ausblenden
 * Optional: Markdown-Dokument zum Download anbieten (in den Bericht eingebettet!)
-* Themes (unterschiedliche Stile)
+* Themes (unterschiedliche Stile), z. B. *default, united, cerulean, lumen, paper, readable, journal*
 
 .pull-left[
 .content-box-gray[
@@ -655,8 +655,6 @@ output:
 .indent[.indent[theme: default]]  
 \-\-\-  
  ]
-
-Weitere Themes: united, cerulean, lumen, paper, readable, journal ...
 
 [Datadreaming: Markdown Theme Gallery](https://www.datadreaming.org/post/r markdown theme gallery/)  
 [R Markdown Book: Appearance and Style](https://bookdown.org/yihui/rmarkdown/html document.html#appearance_and_style)
@@ -704,7 +702,7 @@ In RStudio unter Hilfe - Cheatsheets
 Im Text, d. h. außerhalb von Code-Chunks:
 
 * Webadresse: `![alt text](http://example.com/logo.png)`
-* Lokaler Dateipfad: `![alt text](figures /img.png)`
+* Lokaler Dateipfad: `![alt text](figures/img.png)`
 
 In einem Codeblock:
 
@@ -793,6 +791,7 @@ DT::datatable(
 
 .pull-left[
 
+### 
 Paket | Beschreibung
 ------|-------------
 gtsummary | publikationsfähige zusammenfassende Statistiken<br>Siehe [Github-Seite Daniel Sjoberg](https://github.com/ddsjoberg/gtsummary)
@@ -838,6 +837,35 @@ zur Identifikation der Grafik / Tabelle, die mit ihm erstellt wird
 ![Querverweis auf Gleichung: Markdown-Schreibweise](libs/_Images/Querverweis-Gleichung-Text.png)
 
 ![Querverweis auf Gleichung](libs/_Images/Querverweis-Gleichung.png)
+
+---
+
+# Grafiken und Tabellen: Querverweise
+
+Querverweise werden nicht von Standard-Markdown unterstützt, aber von **bookdown**.
+
+.pull-left[
+Geeignete Formate im Yaml-Header definieren:
+
+.content-box-gray[
+output:  
+.indent[bookdown::pdf_document2: default]  
+.indent[bookdown::html_document2: default]
+ ]
+
+]
+
+.pull-right[
+
+Querverweis auf | Beispiel
+----------------|----------
+Grafik | \@ref(fig:songs-top5)  
+Tabelle |\@ref(tab:top5-table)
+Gleichung | \@ref(eq:mean)
+
+*songs-top5*, *top5-table*: Namen der Code-Chunks
+
+]
 
 ---
 class: inverse, agenda
@@ -1020,7 +1048,7 @@ knitr::include_graphics("libs/_Images/blogdown-cover.png", )
 
 .right-column[
 
-```{r storyboard, echo = FALSE, out.width = "65%", out.height = "65%"}
+```{r storyboard, echo = FALSE, out.width = "70%", out.height = "70%"}
 knitr::include_graphics("libs/_Images/Flexdashboard-Storyboard.png")
 ```
 
@@ -1045,12 +1073,16 @@ class: inverse, agenda
 
 ## Paket-Empfehlungen: Schönere HTML-Dokumente
 
-### distill
+### distill: Wissenschaftliche / technische Artikel
 
 * Lesefreundliche, für mobile Displays geeignete Schriftarten
+
 * Unterstützt LaTeX-Formeln, Zitieren, Fußnoten
+
 * Flexible Layouts für Diagramme, z. B. breiter als Text
+
 * Publikationsmöglichkeiten, z. B. *Distill-Webseite, Distill Blog*
+
 * Mehr Infos: [RStudio: Distill](https://rstudio.github.io/distill/)
 
 ---
@@ -1060,7 +1092,9 @@ class: inverse, agenda
 ## Weitere Pakete für schönere HTML-Dokumente
 
 * prettydoc
+
 * rmdformats
+
 * bslib: eigene Bootstrap-Themes direkt in R erstellen;  
 enthält interaktives Widget für Echtzeit-Vorschau
 
@@ -1086,41 +1120,12 @@ enthält interaktives Widget für Echtzeit-Vorschau
 
 # Ergänzungen
 
-## Querverweise
-
-Querverweise werden nicht von Standard-Markdown unterstützt, aber von **bookdown**.
-
-.pull-left[
-Geeignete Formate im Yaml-Header definieren:
-
-.content-box-gray[
-output:  
-.indent[bookdown::pdf_document2: default]  
-.indent[bookdown::html_document2: default]
- ]
-
-]
-
-.pull-right[
-
-Querverweis auf | Beispiel
-----------------|----------
-Grafik | \@ref(fig:songs-top5)  
-Tabelle |\@ref(tab:top5-table)
-Gleichung | \@ref(eq:mean)
-
-*songs-top5*, *top5-table*: Namen der Code-Chunks
-
-]
-
----
-
-# Ergänzungen
-
 ## Index erstellen
 
 * Wird zur Zeit nur im PDF-Format unterstützt
+
 * Erstellung mit dem LaTeX-Paket **makeidx**
+
 * Siehe [Bookdown-Buch: Index](https://bookdown.org/yihui/bookdown/latex-index.html)
 
 ---
@@ -1135,6 +1140,8 @@ Gleichung | \@ref(eq:mean)
 * Details:
   + `names(knitr::knit_engines$get())`  
   + [Markdown-Buch Kap. 15](https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html)
+
+![SQL-Code](libs/_Images/SQL-Code.png)
 
 ---
 
