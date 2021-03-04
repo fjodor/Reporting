@@ -818,7 +818,7 @@ broom | Wandelt statistische Modelle in data.frames um<br>Diese können mit ande
 * **bookdown**-Format verwenden: *html_document2, pdf_document2, word_document2*  
 Querverweise (*cross references*) werden von rmarkdown nicht unterstützt
 
-* **Bildunterschrift / Tabellenbeschriftung **
+* **Bildunterschrift / Tabellenbeschriftung**  
 Sonst wird Bild / Tabelle direkt eingefügt, ohne Verweis
 
 * Ein **benannter Codeblock**  
@@ -835,7 +835,7 @@ zur Identifikation der Grafik / Tabelle, die mit ihm erstellt wird
 
 ## Beispiel: Gleichung
 
-Der Mittelwert berechnet sich nach Gleichung \@ref(eq:mean).
+![Querverweis auf Gleichung: Markdown-Schreibweise](libs/_Images/Querverweis-Gleichung-Text.png)
 
 ![Querverweis auf Gleichung](libs/_Images/Querverweis-Gleichung.png)
 
@@ -989,17 +989,42 @@ knitr::include_graphics("libs/_Images/blogdown-cover.png", )
 
 ---
 
-# .red[Dashboards mit R und Markdown]
+# Dashboards mit R und Markdown
 
 ## Das flexdashboard-Paket
 
 * Baut auf Markdown auf
+
 * Unterstützt *value boxes* und *gauges* (Kästchen und Armaturen-Displays wie im Auto)
+
 * Flexible Layouts: Zeilen und Spalten einfach definieren
+
 * *Storyboards*: Grafiken und zentrale Befunde übersichtlich darstellen
+
 * Interaktive Elemente: HTML-Widgets, optional Shiny-Apps
 
-.red[Screenshot, nicht von omnitrend, eigenes Beispiel]
+---
+
+# Dashboards mit R und Markdown
+
+## flexdashboard: Beispiel für Storyboard
+
+.left-column[
+
+* Navigationsbereich oben
+* Hauptfenster links
+* Erläuterung rechts
+* optional Quellcode rechts oben
+
+]
+
+.right-column[
+
+```{r storyboard, echo = FALSE, out.width = "65%", out.height = "65%"}
+knitr::include_graphics("libs/_Images/Flexdashboard-Storyboard.png")
+```
+
+]
 
 ---
 class: inverse, agenda
