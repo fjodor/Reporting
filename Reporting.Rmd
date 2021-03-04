@@ -816,25 +816,28 @@ broom | Wandelt statistische Modelle in data.frames um<br>Diese können mit ande
 ## Voraussetzungen
 
 * **bookdown**-Format verwenden: *html_document2, pdf_document2, word_document2*  
-(Querverweise (*cross references) werden von rmarkdown nicht unterstützt)
+Querverweise (*cross references*) werden von rmarkdown nicht unterstützt
 
-* **Bildunterschrift** (Tabellenbeschriftung)  
-Sonst wird das Bild direkt eingefügt, ohne Verweis
+* **Bildunterschrift / Tabellenbeschriftung **
+Sonst wird Bild / Tabelle direkt eingefügt, ohne Verweis
 
 * Ein **benannter Codeblock**  
 zur Identifikation der Grafik / Tabelle, die mit ihm erstellt wird
 
-* Literatur:  
-Ausführlich: [Bookdown Kap. 2, insbesondere 2.6](https://bookdown.org/yihui/bookdown/components.html)  
-Knapper: [Markdown-Buch Kap. 4.7](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html)
+### Literatur
+
+* Ausführlich: [Bookdown Kap. 2, insbesondere 2.6](https://bookdown.org/yihui/bookdown/components.html)  
+* Knapper: [Markdown-Buch Kap. 4.7](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html)
 
 ---
 
 # Grafiken und Tabellen: Querverweise
 
-## Beispiel
+## Beispiel: Gleichung
 
+Der Mittelwert berechnet sich nach Gleichung \@ref(eq:mean).
 
+![Querverweis auf Gleichung](libs/_Images/Querverweis-Gleichung.png)
 
 ---
 class: inverse, agenda
@@ -1062,7 +1065,6 @@ enthält interaktives Widget für Echtzeit-Vorschau
 
 Querverweise werden nicht von Standard-Markdown unterstützt, aber von **bookdown**.
 
-
 .pull-left[
 Geeignete Formate im Yaml-Header definieren:
 
@@ -1123,14 +1125,6 @@ Gleichung | \@ref(eq:mean)
 
 * **Shiny Widgets** zur interaktiven grafischen Bearbeitung, z. B. um Ausreißer zu filtern oder zu beschriften  
 Beispiel: **esquisse:** ggplot-Diagramme per grafischer Oberfläche erstellen
-
----
-
-# .red[To do]
-
-* distill testen
-* Bibliografie (nur PDF? distill? paper...? Link?)
-* Abbildungs-Beschriftungen
 
 ---
 layout: false
