@@ -1164,7 +1164,7 @@ enthält interaktives Widget für Echtzeit-Vorschau
   + Lokale R-Session *oder*
   + Serverbasierte R-Session (Webseite)
   
-.red[Beispiel: **7a_Shiny.R**]
+Beispiel: **7a_Shiny.R**
 
 Shiny lernen:
 
@@ -1186,7 +1186,7 @@ knitr::include_graphics("libs/_Images/mastering-shiny.png")
 
 Die Markdown-HTML-Formate können **mit Shiny-Elementen oder ohne** erstellt werden.
 
-.red[Beispiel für Dashboard mit Shiny: **7b_Flexdash_shiny.Rmd**]
+Beispiel für Dashboard mit Shiny: **7b_Dashboard_shiny.Rmd**
 
 --
 
