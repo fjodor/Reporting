@@ -1106,18 +1106,23 @@ enthält interaktives Widget für Echtzeit-Vorschau
 
 ## Paket-Empfehlungen: Schönere PDF-Dokumente
 
+.pull-left[
 ### pagedown
 
 * "A less traveled road to PDF"; Romain Lesur und Yihui Xie  
 * Verwendet HTML, CSS sowie paged.js, um PDF zu erzeugen
+* Formate: Lebenslauf, Poster, Visitenkarte, Brief, Dissertation, Fachartikel (*Journal for Statistical Software*)
+* Verzeichnisse für Tabellen, Abbildungen, Abkürzungen
 * [pagedown Online-Buch](https://pagedown.rbind.io/)
+]
 
+.pull-right[
 ### pagedreport
 
 * Enthält Vorlagen, die direkt aus RMarkdown angepasst werden können
 * Anwender benötigt keine Kenntnisse in HTML, CSS oder Javascript
 * [pagedreport Blogartikel, mit Video](https://rfortherestofus.com/2021/01/announcing-pagedreport/)  
-
+]
 ---
 
 # Ergänzungen
